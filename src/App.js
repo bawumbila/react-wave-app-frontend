@@ -33,6 +33,7 @@ function App() {
     // console.log(Array.from(state.topTracks[state.newTrack.track].image[0].0)
 
     const track = state.topTracks[state.newTrack.track];
+    
 
     const tracktoSave = {
       'title': track.name,
@@ -50,15 +51,16 @@ function App() {
         body: JSON.stringify(tracktoSave)
       }).then(res => res.json());
 
-    // setState((prevState) => ({
-    //   ...prevState,
-    //   // tracks: [...prevState.tracks, loadTrack],
-    //   // newTrack: {
-    //   //   artistName: "kanye",
-    //   //   trackName: "glory",
-    //   // },
-    //   loadTrack: track
-    // }));
+    setState((prevState) => ({
+      ...prevState,
+      topTracks: [...prevState.tracks, savedTrack],
+      newTrack: {
+        artis: "kanye",
+        title: "glory",
+      },
+      loadTrack: track
+
+    }));
       
     
   }
@@ -115,13 +117,13 @@ function App() {
             </label>
             <button>Add to Playlist</button>
           </form>
-          {/* <section>
-          {state.topTracks.map((s) => (
-            <article >
-              <div>{s.title}</div> <div>{s.artist}</div>
-            </article>
+          {state.topTracks.map((x, index) => ( 
+            <article key={index}>
+             <h2>{x.name}</h2>
+           
+        
+                  </article>
           ))}
-          </section> */}
         </>
       
     </main>
