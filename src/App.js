@@ -55,7 +55,7 @@ function App() {
       ...prevState,
       topTracks: [...prevState.tracks, savedTrack],
       newTrack: {
-        artis: "kanye",
+        artist: "kanye",
         title: "glory",
       },
       loadTrack: track
@@ -77,6 +77,24 @@ function App() {
       }
     })) 
   }
+
+
+  // Get Backend Data
+
+  // async function getBackendData() {
+  //   try {
+  //     const BASE_URL = "http://localhost:3001/api/tracks";
+  //     const tracks = await fetch(BASE_URL).then(res => res.json());
+  //     setState((prevState) => ({
+  //       ...prevState,
+  //       tracks,
+  //     }));
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
+
+
 
   async function getAppData() {
     // if(!state.user) return;
@@ -103,6 +121,7 @@ function App() {
       <header className="App-header">
         <h1>WAVe Music App</h1>
       </header>
+     
       
       <>
         <hr />
