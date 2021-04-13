@@ -1,10 +1,10 @@
 # WAVe Music Playlist App.
 
-1. A simple web app that to help keep track of your groceries.
-2. Create a Grocery List by entering your list name on the Create Grocery list Page.
-3. Add grocery Items to the Drop-Down by adding them in the Add Grocery Items page.
-4. View all created Grocery lists Created on the Grocey list show page.
-5. Click on Grocery list name to add items from the Drop-down to your list.
+1. A simple Music PLAYLIST APP.
+2. Allows you to crate a playlist of your favorite songs.
+3. Select top tracks from dropdown at the top of page.
+4. You can enter Artist and song information in firlds to pull up your favorite tracks.
+5. Play track text takes you to a last page to be able to play song.
 7. There are options at the top of the page to take you home and to various other pages.
 
 ##  Getting Started. 🏎💨 
@@ -27,11 +27,11 @@
 
 ![Wireframe Mobile](./src/images/display.png)
 
-![App Screenshot](./public/stylesheets/imgs.png)
+![App Screenshot](./srcc/images/app.png)
 
 ##  Future Enhancements. 🛠
 
-- Fix price total when you add items to list.
+- Add Authentication.
 - Minor UI tweeks.
 - Possible Animations.
-- Add ability to log in.
+- Add ability play directly from app.
