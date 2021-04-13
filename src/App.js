@@ -1,119 +1,206 @@
 import { useState, useEffect } from "react";
-import './App.css';
-
-
+import "./App.css";
 function App() {
-
-
-
   const [state, setState] = useState({
     user: null,
     tracks: [],
     topTracks: [],
-    newTrack: {}, 
-    loadedTracks: {
-      track: '',
-      artist: '', 
-      title: '',
-      image: '',
-      name: '',
-      url: '',
-    }
+    newTrack: {},
+    searchedTrack: {}
   });
 
+  async function loadTopTracks(e) {
+    // if(!state.user) return;
+    e.preventDefault();
+    const BACKEND_URL = "http://localhost:3001/api/tracks";
+    // console.log(state.topTracks[state.newTrack.track].image[0].keys())
+
+    if (state.newTrack.track != -1 && state.newTrack.track) {
+      // console.log(Object.entries(state.topTracks[state.newTrack.track].image[0])[0][1])
+      const track = state.topTracks[state.newTrack.track];
+
+      const BASE_URL =
+        "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=55b45039502bf33ba703cc81d8dc8e8d&artist=" + 
+        track.artist.name + "&track=" + track.name + "&format=json";
+
+      const searchedTrack = await fetch(BASE_URL, {
+        method: "POST",
+        headers: {
+          "Content-type": "Application/json",
+        }
+      }).then((res) => res.json());
+
+      console.log(searchedTrack)
+
+      let image = ""
+      if (searchedTrack.track.album) {
+        // Gets the 2nd image. change first number to 0 to get first image.
+        console.log(Object.entries(searchedTrack.track.album.image[1])[0][1])
+        image = Object.entries(searchedTrack.track.album.image[1])[0][1]
+      } 
+
+      const tracktoSave = {
+        title: searchedTrack.track.name,
+        url: searchedTrack.track.url,
+        artist: searchedTrack.track.artist.name,
+        image: image,
+        playcount: searchedTrack.track.playcount,
+        artistURL: searchedTrack.track.artist.url,
+      };
+      const savedTrack = await fetch(BACKEND_URL, {
+        method: "POST",
+        headers: {
+          "Content-type": "Application/json",
+        },
+        body: JSON.stringify(tracktoSave),
+      }).then((res) => res.json());
+      setState((prevState) => ({
+        ...prevState,
+        topTracks: [...prevState.tracks, savedTrack],
+        newTrack: {
+          artist: "kanye",
+          title: "glory",
+        },
+        loadTrack: track,
+      }));
+      getAppData();
+      getBackendData();
+    } else {
+      alert("please select a track from the dropdown.")
+    }
+  }
 
   async function searchTrack(e) {
     // if(!state.user) return;
-    
     e.preventDefault();
+    console.log(state.searchedTrack)
+    const BASE_URL =
+        "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=55b45039502bf33ba703cc81d8dc8e8d&artist=" + 
+        state.searchedTrack.artistName + "&track=" + state.searchedTrack.trackName + "&format=json";
+    console.log(BASE_URL)
 
-    const BACKEND_URL = 'http://localhost:3001/api/tracks';
+    const searchedTrack = await fetch(BASE_URL, {
+      method: "POST",
+      headers: {
+        "Content-type": "Application/json",
+      }
+    }).then((res) => res.json());
 
-    // console.log(state.topTracks[state.newTrack.track].image[0].keys())
-    // console.log(Array.from(state.topTracks[state.newTrack.track].image[0].0)
+   if (searchedTrack.message != "Track not found") {
+    console.log(searchedTrack.message )
 
-    const track = state.topTracks[state.newTrack.track];
-    
+    let image = ""
+    if (searchedTrack.track.album) {
+       // Gets the 2nd image. change first number to 0 to get first image.
+      console.log(Object.entries(searchedTrack.track.album.image[1])[0][1])
+      image = Object.entries(searchedTrack.track.album.image[1])[0][1]
+    } 
 
     const tracktoSave = {
-      'title': track.name,
-      'url': track.url,
-      'artist': track.artist.name,
-      // 'image': track.image[0],
-      'playcount': track.playcount,
-      'artistURL':  track.artist.url
-    }
+      title: searchedTrack.track.name,
+      url: searchedTrack.track.url,
+      artist: searchedTrack.track.artist.name,
+      image: image,
+      playcount: searchedTrack.track.playcount,
+      artistURL: searchedTrack.track.artist.url,
+    };
+
+    const BACKEND_URL = "http://localhost:3001/api/tracks";
+
     const savedTrack = await fetch(BACKEND_URL, {
-        method: 'POST',
-        headers: {
-          'Content-type': 'Application/json'
-        },
-        body: JSON.stringify(tracktoSave)
-      }).then(res => res.json());
-
-    setState((prevState) => ({
-      ...prevState,
-      topTracks: [...prevState.tracks, savedTrack],
-      newTrack: {
-        artist: "kanye",
-        title: "glory",
+      method: "POST",
+      headers: {
+        "Content-type": "Application/json",
       },
-      loadTrack: track
+      body: JSON.stringify(tracktoSave),
+    }).then((res) => res.json());
+      setState((prevState) => ({
+        ...prevState,
+        topTracks: [...prevState.tracks, savedTrack],
+        newTrack: {
+          artist: "kanye",
+          title: "glory",
+        }
+      }));
+      getAppData();
+          getBackendData();
 
-    }));
-      
-    
+    } else {
+      alert("This track does not exist. Please search for a different track.")
+    } 
   }
 
   function handleChange(e) {
-    console.log(e.target.name)
-    console.log(e.target.value)
-
+    console.log(e.target.name);
+    console.log(e.target.value);
     setState((prevState) => ({
-      ...prevState, 
+      ...prevState,
       newTrack: {
         ...prevState.newTrack,
-        [e.target.name]: e.target.value
-      }
-    })) 
+        [e.target.name]: e.target.value,
+      },
+    }));
+  }
+
+  function handleSearchChange(e) {
+    console.log(e.target.name);
+    console.log(e.target.value);
+    setState((prevState) => ({
+      ...prevState,
+      searchedTrack: {
+        ...prevState.searchedTrack,
+        [e.target.name]: e.target.value,
+      },
+    }));
+  }
+
+  async function handleDelete(trackId) {
+    console.log("in handle delete")
+    // if(!state.user) return;
+    const URL = `http://localhost:3001/api/tracks/${trackId}`;
+    
+    const tracks = await fetch(URL, {
+      method: 'DELETE'
+    }).then(res => res.json());
+
+    getAppData();
+    getBackendData();
   }
 
 
   // Get Backend Data
-
-  // async function getBackendData() {
-  //   try {
-  //     const BASE_URL = "http://localhost:3001/api/tracks";
-  //     const tracks = await fetch(BASE_URL).then(res => res.json());
-  //     setState((prevState) => ({
-  //       ...prevState,
-  //       tracks,
-  //     }));
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
-
-
-
-  async function getAppData() {
-    // if(!state.user) return;
+  async function getBackendData() {
     try {
-      const BASE_URL = 'http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=55b45039502bf33ba703cc81d8dc8e8d&format=json'; // &limit=200
+      const BASE_URL = "http://localhost:3001/api/tracks";
       const tracks = await fetch(BASE_URL).then(res => res.json());
-      // console.log(tracks);
+      console.log(tracks)
       setState((prevState) => ({
         ...prevState,
-        topTracks: tracks.tracks.track
+        tracks: tracks,
       }));
     } catch (error) {
       console.log(error)
     }
   }
+  async function getAppData() {
+    // if(!state.user) return;
+    try {
+      const BASE_URL =
+        "http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=55b45039502bf33ba703cc81d8dc8e8d&format=json"; // &limit=200
+      const tracks = await fetch(BASE_URL).then((res) => res.json());
+      console.log(tracks);
+      setState((prevState) => ({
+        ...prevState,
+        topTracks: tracks.tracks.track,
+      }));
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   useEffect(() => {
     getAppData();
-
+    getBackendData();
   }, []);
 
   return (
@@ -121,34 +208,52 @@ function App() {
       <header className="App-header">
         <h1>WAVe Music App</h1>
       </header>
-     
-      
       <>
         <hr />
-          <form onSubmit={searchTrack}>
-            <label>
-              <span>Top Tracks</span>
-              <select name="track" onChange={handleChange} > 
-                {state.topTracks.map((s, idx) => (
-                    <option key={s.name}  value={idx}>{s.name}</option>
-                ))}
-              </select>
-            </label>
-            <button>Add to Playlist</button>
-          </form>
-          {state.topTracks.map((x, index) => ( 
+        <form onSubmit={loadTopTracks}>
+          <label>
+            <span>Top Tracks</span>
+            <select name="track" onChange={handleChange}>
+            <option key="default" value="-1">Select Top Track from dropdown.</option>
+              {state.topTracks.map((s, idx) => (
+                <option key={s.name} value={idx}>
+                  {s.name}
+                </option>
+              ))}
+            </select>
+          </label>
+          <button>Add to Playlist</button>
+        </form>
+
+
+        <>
+            <hr />
+              <form onSubmit={searchTrack}>
+                <label>
+                  <span>Track Name</span>
+                  <input name="trackName" onChange={handleSearchChange} />
+                </label>
+                <label>
+                  <span>Artist Name</span>
+                  <input name="artistName" onChange={handleSearchChange} />
+                </label>
+                <button>Search Track</button>
+              </form>
+            </>
+
+
+        {/* THIS IS WHERE YOU POPULATE THE PLAYLIST DATA */} 
+        <div className="container">
+          {state.tracks.map((x, index) => (
             <article key={index}>
-             <h2>{x.name}</h2>
-           
-        
-                  </article>
+              <h2>{x.title} BY {x.artist} | <a href={x.url} target="_blank" >Play Track</a> | Play Count: <span>{x.playcount}</span>  <img src={x.image} ></img>
+              <div className="delButton" onClick={() => handleDelete(x._id)}>{"🚫"}</div></h2>
+            </article>
           ))}
-        </>
-      
+        </div>
+        {/* END WHERE YOU POPULATE THE PLAYLIST DATA */} 
+      </>
     </main>
-    
-    
   );
 }
-
 export default App;
