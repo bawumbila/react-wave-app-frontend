@@ -23,9 +23,9 @@
 
 ##  Screenshots and Wireframes. 📸
 
-![Wireframe 1](./images/landing.png)
+![Wireframe 1](./src/images/landing.png)
 
-![Wireframe Mobile](./images/display.png)
+![Wireframe Mobile](./src/images/display.png)
 
 ![App Screenshot](./public/stylesheets/imgs.png)
 
