@@ -206,7 +206,7 @@ function App() {
   return (
     <main className="App">
       <header className="App-header">
-        <h1>WAVe Music App</h1>
+        <h1>WAVe Music Playlist App</h1>
       </header>
       <>
         <hr />
