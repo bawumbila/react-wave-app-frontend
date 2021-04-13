@@ -29,8 +29,20 @@ h2 {
   text-align: left;
 }
 form {
-  padding-top: 30px;
+  padding-top: 10px;
 }
+
+img {
+  width: 35px;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: thin;
+  box-shadow: px #888888;
+  border-color: rgb(97, 96, 96);
+
+}
+
+
 .container {
   padding: 0 50px;
   display: flex;
@@ -40,14 +52,14 @@ form {
   height: 100vh;
 }
 select {
-  padding: 20px;
+  padding: 10px;
   margin: 0 20px;
   border-radius: 20px;
   border: none;
 }
 button {
   border-radius: 20px;
-  padding: 20px;
+  padding: 10px;
   border: none;
   text-transform: uppercase;
   font-weight: bold;
@@ -55,7 +67,7 @@ button {
   background-color: #c09d03;
 }
 label span {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 

@@ -246,7 +246,8 @@ function App() {
         <div className="container">
           {state.tracks.map((x, index) => (
             <article key={index}>
-              <h2>{x.title} BY {x.artist} | <a href={x.url} target="_blank" >Play Track</a> | Play Count: <span>{x.playcount}</span>  <img src={x.image} ></img>
+              <img src={x.image} ></img>
+              <h2>{x.title} BY {x.artist} | <a href={x.url} target="_blank" >Play Track</a> | Play Count: <span>{x.playcount}</span>  
               <div className="delButton" onClick={() => handleDelete(x._id)}>{"🚫"}</div></h2>
             </article>
           ))}
