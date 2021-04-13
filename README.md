@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# WAVe Music Playlist App.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. A simple web app that to help keep track of your groceries.
+2. Create a Grocery List by entering your list name on the Create Grocery list Page.
+3. Add grocery Items to the Drop-Down by adding them in the Add Grocery Items page.
+4. View all created Grocery lists Created on the Grocey list show page.
+5. Click on Grocery list name to add items from the Drop-down to your list.
+7. There are options at the top of the page to take you home and to various other pages.
 
-## Available Scripts
+##  Getting Started. 🏎💨 
 
-In the project directory, you can run:
+[click here](https://groceries-app-bawa.herokuapp.com/) to get started. 
 
-### `npm start`
+##  Technologies Used. ⚙️
+- CSS
+- HTML
+- JavaScript
+- Express
+- MongoDB
+- Mongoose
+- Github
+- Heroku for deployment.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##  Screenshots and Wireframes. 📸
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![Wireframe 1](./images/landing.png)
 
-### `npm test`
+![Wireframe Mobile](./images/display.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![App Screenshot](./public/stylesheets/imgs.png)
 
-### `npm run build`
+##  Future Enhancements. 🛠
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Fix price total when you add items to list.
+- Minor UI tweeks.
+- Possible Animations.
+- Add ability to log in.
