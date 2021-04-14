@@ -101,7 +101,8 @@ grid-column: 5/7;
 
 .footer {
   flex-shrink: 0;
+  padding: 6px;
   text-align: center;
-  background-color: tomato;
+  background-color: #282c34;
   color: white;
 }

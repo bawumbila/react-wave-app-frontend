@@ -247,7 +247,7 @@ function App() {
         {/* END WHERE YOU POPULATE THE PLAYLIST DATA */}
       </>
       <footer className="footer">
-        <p>&copy; Bawa 2021!</p>
+        <p>&copy; WAVe Music 2021!</p>
       </footer>
     </main>
   );
