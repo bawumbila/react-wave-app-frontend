@@ -116,6 +116,10 @@ function App() {
       }));
       getAppData();
       getBackendData();
+      var inputOne = document.getElementById("resetableField1");
+      var inputTwo = document.getElementById("resetableField2");
+      inputOne.value = '';
+      inputTwo.value = '';
     } else {
       alert("This track does not exist. Please search for a different track.");
     }
@@ -217,13 +221,13 @@ function App() {
             <span className="topTracks">
               <span>Track Name</span>
               </span>
-              <input name="trackName" onChange={handleSearchChange} />
+              <input id="resetableField1" name="trackName" onChange={handleSearchChange} />
             </label>
             <label>
             <span className="topTracks">
               <span>Artist Name</span>
               </span>
-              <input name="artistName" onChange={handleSearchChange} />
+              <input id="resetableField2" name="artistName" onChange={handleSearchChange} />
             </label>
             <button>Search Track</button>
           </form>
