@@ -13,7 +13,7 @@ function App() {
     e.preventDefault();
     const BACKEND_URL = "http://localhost:3001/api/tracks";
     // console.log(state.topTracks[state.newTrack.track].image[0].keys())
-    if (state.newTrack.track !== -1 && state.newTrack.track) {
+    if (state.newTrack.track != -1 && state.newTrack.track) {
       // console.log(Object.entries(state.topTracks[state.newTrack.track].image[0])[0][1])
       const track = state.topTracks[state.newTrack.track];
       const BASE_URL =
@@ -82,7 +82,7 @@ function App() {
         "Content-type": "Application/json",
       },
     }).then((res) => res.json());
-    if (searchedTrack.message !== "Track not found") {
+    if (searchedTrack.message != "Track not found") {
       console.log(searchedTrack.message);
       let image = "";
       if (searchedTrack.track.album) {
@@ -194,7 +194,9 @@ function App() {
         <hr />
         <form onSubmit={loadTopTracks}>
           <label>
+            <span className="topTracks">
             <span>Top Tracks</span>
+            </span>
             <select name="track" onChange={handleChange}>
               <option key="default" value="-1">
                 Select Top Track from dropdown.
@@ -212,11 +214,15 @@ function App() {
           <hr />
           <form onSubmit={searchTrack}>
             <label>
+            <span className="topTracks">
               <span>Track Name</span>
+              </span>
               <input name="trackName" onChange={handleSearchChange} />
             </label>
             <label>
+            <span className="topTracks">
               <span>Artist Name</span>
+              </span>
               <input name="artistName" onChange={handleSearchChange} />
             </label>
             <button>Search Track</button>
