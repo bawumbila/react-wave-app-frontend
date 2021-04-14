@@ -1,7 +1,7 @@
 # WAVe Music Playlist App.
 
 1. A simple Music PLAYLIST APP.
-2. Allows you to crate a playlist of your favorite songs.
+2. Allows you to create a playlist of your favorite songs.
 3. Select top tracks from dropdown at the top of page to add to playlist.
 4. You can enter Artist and song information in feilds to search for your favorite tracks.
 5. "Play track" text takes you to a last FM page to be able to play song.
@@ -9,7 +9,7 @@
 
 ##  Getting Started. 🏎💨 
 
-[click here](https://groceries-app-bawa.herokuapp.com/) to get started. 
+[click here](https://react-wave-app.herokuapp.com/) to get started. 
 
 ##  Technologies Used. ⚙️
 - CSS
@@ -23,7 +23,7 @@
 - Github
 - Heroku for deployment.
 
-##  Screenshots and Wireframes. 📸
+##  Screenshots and Wireframes. 📸    
 
 ![Wireframe 1](./src/images/landing.png)
 
@@ -36,4 +36,4 @@
 - Add Authentication.
 - Minor UI tweeks.
 - Possible Animations.
-- Add ability play directly from app.
+- Add ability play Tracks directly from app.
