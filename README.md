@@ -29,7 +29,7 @@
 
 ![Wireframe Mobile](./src/images/display.png)
 
-![App Screenshot](./src/images/app.png)
+![App Screenshot](./src/images/apps.png)
 
 ##  Future Enhancements. 🛠
 
