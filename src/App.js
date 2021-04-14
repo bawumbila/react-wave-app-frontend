@@ -242,7 +242,7 @@ function App() {
                 {x.title} BY {x.artist} {" "}
                 </div>
                 <a href={x.url} target="_blank">
-                  Play Track
+                  Play Track {"▶️"}
                 </a>{" "}
                 <div className="playCount1">
                  Play Count: <span>{x.playcount}</span>
