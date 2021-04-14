@@ -11,6 +11,7 @@
 }
 .App-header {
   background-color: #282c34;
+  
   display: flex;
   border-radius: 5px;
   flex-direction: column;
@@ -27,6 +28,11 @@ body {
   background-size: 110%;
   flex-grow: 1;
 }
+
+h1 {
+  text-shadow: 1px 1px 2px rgb(5, 5, 5);
+}
+
 h2 {
   font-size: 1.1rem;
   margin-top: 0;
@@ -46,12 +52,13 @@ img {
 .container {
   padding: 0 50px;
   width: 80vw;
+min-height: 70vh;
   margin: auto;
   /* display: flex; */
   flex-direction: column;
   /* flex-wrap: wrap; */
   padding: 50px 50px 0 50px;
-  height: 100vh;
+  height: auto;
 }
 select, input {
   padding: 10px;
