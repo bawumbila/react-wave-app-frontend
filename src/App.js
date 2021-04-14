@@ -11,13 +11,13 @@ function App() {
   async function loadTopTracks(e) {
     // if(!state.user) return;
     e.preventDefault();
-    const BACKEND_URL = "http://localhost:3001/api/tracks";
+    const BACKEND_URL = "https://wave-app-backend.herokuapp.com/api/tracks";
     // console.log(state.topTracks[state.newTrack.track].image[0].keys())
     if (state.newTrack.track != -1 && state.newTrack.track) {
       // console.log(Object.entries(state.topTracks[state.newTrack.track].image[0])[0][1])
       const track = state.topTracks[state.newTrack.track];
       const BASE_URL =
-        "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=55b45039502bf33ba703cc81d8dc8e8d&artist=" +
+        "https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=55b45039502bf33ba703cc81d8dc8e8d&artist=" +
         track.artist.name +
         "&track=" +
         track.name +
@@ -70,7 +70,7 @@ function App() {
     e.preventDefault();
     console.log(state.searchedTrack);
     const BASE_URL =
-      "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=55b45039502bf33ba703cc81d8dc8e8d&artist=" +
+      "https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=55b45039502bf33ba703cc81d8dc8e8d&artist=" +
       state.searchedTrack.artistName +
       "&track=" +
       state.searchedTrack.trackName +
