@@ -98,7 +98,7 @@ function App() {
         playcount: searchedTrack.track.playcount,
         artistURL: searchedTrack.track.artist.url,
       };
-      const BACKEND_URL = "http://localhost:3001/api/tracks";
+      const BACKEND_URL = "https://wave-app-backend.herokuapp.com/api/tracks";
       const savedTrack = await fetch(BACKEND_URL, {
         method: "POST",
         headers: {
@@ -145,7 +145,7 @@ function App() {
   async function handleDelete(trackId) {
     console.log("in handle delete");
     // if(!state.user) return;
-    const URL = `http://localhost:3001/api/tracks/${trackId}`;
+    const URL = `https://wave-app-backend.herokuapp.com/api/tracks/${trackId}`;
     const tracks = await fetch(URL, {
       method: "DELETE",
     }).then((res) => res.json());
@@ -155,7 +155,7 @@ function App() {
   // Get Backend Data
   async function getBackendData() {
     try {
-      const BASE_URL = "http://localhost:3001/api/tracks";
+      const BASE_URL = "https://wave-app-backend.herokuapp.com/api/tracks";
       const tracks = await fetch(BASE_URL).then((res) => res.json());
       console.log(tracks);
       setState((prevState) => ({
