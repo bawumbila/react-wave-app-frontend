@@ -170,7 +170,7 @@ function App() {
     // if(!state.user) return;
     try {
       const BASE_URL =
-        "http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=55b45039502bf33ba703cc81d8dc8e8d&format=json"; // &limit=200
+        "https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=55b45039502bf33ba703cc81d8dc8e8d&format=json"; // &limit=200
       const tracks = await fetch(BASE_URL).then((res) => res.json());
       console.log(tracks);
       setState((prevState) => ({
