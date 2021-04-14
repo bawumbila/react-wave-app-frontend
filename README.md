@@ -2,10 +2,10 @@
 
 1. A simple Music PLAYLIST APP.
 2. Allows you to crate a playlist of your favorite songs.
-3. Select top tracks from dropdown at the top of page.
-4. You can enter Artist and song information in firlds to pull up your favorite tracks.
-5. Play track text takes you to a last page to be able to play song.
-7. There are options at the top of the page to take you home and to various other pages.
+3. Select top tracks from dropdown at the top of page to add to playlist.
+4. You can enter Artist and song information in feilds to search for your favorite tracks.
+5. "Play track" text takes you to a last FM page to be able to play song.
+7. There is a delete button to independently delete each song added.
 
 ##  Getting Started. 🏎💨 
 
@@ -18,6 +18,8 @@
 - Express
 - MongoDB
 - Mongoose
+- Morgan
+- CORS
 - Github
 - Heroku for deployment.
 
@@ -27,7 +29,7 @@
 
 ![Wireframe Mobile](./src/images/display.png)
 
-![App Screenshot](./srcc/images/app.png)
+![App Screenshot](./src/images/app.png)
 
 ##  Future Enhancements. 🛠
 

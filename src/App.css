@@ -41,9 +41,11 @@ img {
 }
 .container {
   padding: 0 50px;
-  display: flex;
+  width: 80vw;
+  margin: auto;
+  /* display: flex; */
   flex-direction: column;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   padding: 50px 50px 0 50px;
   height: 100vh;
 }
@@ -70,10 +72,32 @@ label span {
   cursor: pointer;
 }
 .lineItem {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
   align-items: center;
-  justify-content: space-between;
-  padding-right: 30vw;
-  font-size: 1.5rem;
+
+  /* justify-content: space-between; */
+  /* padding-right: 10vw; */
+  font-size: 1rem;
   margin-bottom: 15px;
+}
+
+.songTitle {
+  justify-self: stretch;
+  grid-column: 2/4;
+}
+
+.playCount1 {
+  /* justify-self: start; */
+grid-column: 5/7;
+  border-radius: 3px;
+  background: rgba(231, 231, 231, 0.5)
+}
+
+
+.footer {
+  flex-shrink: 0;
+  text-align: center;
+  background-color: tomato;
+  color: white;
 }

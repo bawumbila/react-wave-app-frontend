@@ -13,7 +13,7 @@ function App() {
     e.preventDefault();
     const BACKEND_URL = "http://localhost:3001/api/tracks";
     // console.log(state.topTracks[state.newTrack.track].image[0].keys())
-    if (state.newTrack.track != -1 && state.newTrack.track) {
+    if (state.newTrack.track !== -1 && state.newTrack.track) {
       // console.log(Object.entries(state.topTracks[state.newTrack.track].image[0])[0][1])
       const track = state.topTracks[state.newTrack.track];
       const BASE_URL =
@@ -82,7 +82,7 @@ function App() {
         "Content-type": "Application/json",
       },
     }).then((res) => res.json());
-    if (searchedTrack.message != "Track not found") {
+    if (searchedTrack.message !== "Track not found") {
       console.log(searchedTrack.message);
       let image = "";
       if (searchedTrack.track.album) {
@@ -228,11 +228,15 @@ function App() {
             <article key={index}>
               <div className="lineItem">
                 <img src={x.image}></img>
-                {x.title} BY {x.artist} |{" "}
+                <div className="songTitle">
+                {x.title} BY {x.artist} {" "}
+                </div>
                 <a href={x.url} target="_blank">
                   Play Track
                 </a>{" "}
-                | Play Count: <span>{x.playcount}</span>
+                <div className="playCount1">
+                 Play Count: <span>{x.playcount}</span>
+                </div>
                 <div className="delButton" onClick={() => handleDelete(x._id)}>
                   {"🚫"}
                 </div>
@@ -242,6 +246,9 @@ function App() {
         </div>
         {/* END WHERE YOU POPULATE THE PLAYLIST DATA */}
       </>
+      <footer className="footer">
+        <p>&copy; Bawa 2021!</p>
+      </footer>
     </main>
   );
 }
