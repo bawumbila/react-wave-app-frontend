@@ -35,4 +35,5 @@
 - Add Authentication.
 - Minor UI tweeks.
 - Possible Animations.
+- Add Update Feature.
 - Add ability play Tracks directly from app.
