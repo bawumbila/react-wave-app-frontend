@@ -21,6 +21,7 @@
 - Morgan
 - CORS
 - Github
+- Last FM API
 - Heroku for deployment.
 
 ##  Screenshots and Wireframes. 📸    
