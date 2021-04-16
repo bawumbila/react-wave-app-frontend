@@ -13,8 +13,6 @@
 
 ##  Technologies Used. ⚙️
 - CSS
-- HTML
-- JavaScript
 - Express
 - MongoDB
 - Mongoose
