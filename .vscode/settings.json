@@ -1,19 +1,25 @@
 {
     "workbench.colorCustomizations": {
-        "activityBar.activeBackground": "#d1630c",
-        "activityBar.activeBorder": "#055a2b",
-        "activityBar.background": "#d1630c",
-        "activityBar.foreground": "#e7e7e7",
-        "activityBar.inactiveForeground": "#e7e7e799",
-        "activityBarBadge.background": "#055a2b",
-        "activityBarBadge.foreground": "#e7e7e7",
-        "statusBar.background": "#a14c09",
-        "statusBar.foreground": "#e7e7e7",
-        "statusBarItem.hoverBackground": "#d1630c",
-        "titleBar.activeBackground": "#a14c09",
-        "titleBar.activeForeground": "#e7e7e7",
-        "titleBar.inactiveBackground": "#a14c0999",
-        "titleBar.inactiveForeground": "#e7e7e799"
+        "activityBar.activeBackground": "#c7ddb6",
+        "activityBar.activeBorder": "#678ab8",
+        "activityBar.background": "#c7ddb6",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#678ab8",
+        "activityBarBadge.foreground": "#15202b",
+        "statusBar.background": "#accd93",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#91bd70",
+        "titleBar.activeBackground": "#accd93",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveBackground": "#accd9399",
+        "titleBar.inactiveForeground": "#15202b99"
     },
-    "peacock.color": "#a14c09"
+    "peacock.color": "#accd93",
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/d46c4e2e-3e40-4a00-ab15-065086d3596d/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/Waveappfinal",
+    "appService.deploySubpath": "."
 }
