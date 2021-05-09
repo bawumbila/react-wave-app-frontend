@@ -9,7 +9,7 @@
 
 ##  Getting Started. 🏎💨 
 
-[click here](https://react-wave-app.herokuapp.com/) to get started. 
+[click here](https://waveappfinal.azurewebsites.net/) to get started. 
 
 ##  Technologies Used. ⚙️
 - CSS
@@ -20,7 +20,7 @@
 - CORS
 - Github
 - Last FM API
-- Heroku for deployment.
+- Azure Web Services for deployment.
 
 ##  Screenshots and Wireframes. 📸    
 
