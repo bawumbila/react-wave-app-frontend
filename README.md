@@ -20,7 +20,7 @@
 - CORS
 - Github
 - Last FM API
-- Azure Web Services for deployment.
+- Azure Coud Services for deployment.
 
 ##  Screenshots and Wireframes. 📸    
 
