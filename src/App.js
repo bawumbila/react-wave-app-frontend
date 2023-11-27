@@ -13,7 +13,7 @@ function App() {
     e.preventDefault();
     const BACKEND_URL = "https://wave-app-backend.herokuapp.com/api/tracks";
     // console.log(state.topTracks[state.newTrack.track].image[0].keys())
-    if (state.newTrack.track != -1 && state.newTrack.track) {
+    if (state.newTrack.track !== -1 && state.newTrack.track) {
       // console.log(Object.entries(state.topTracks[state.newTrack.track].image[0])[0][1])
       const track = state.topTracks[state.newTrack.track];
       const BASE_URL =
@@ -82,7 +82,7 @@ function App() {
         "Content-type": "Application/json",
       },
     }).then((res) => res.json());
-    if (searchedTrack.message != "Track not found") {
+    if (searchedTrack.message !== "Track not found") {
       console.log(searchedTrack.message);
       let image = "";
       if (searchedTrack.track.album) {
@@ -118,8 +118,8 @@ function App() {
       getBackendData();
       var inputOne = document.getElementById("resetableField1");
       var inputTwo = document.getElementById("resetableField2");
-      inputOne.value = '';
-      inputTwo.value = '';
+      inputOne.value = "";
+      inputTwo.value = "";
     } else {
       alert("This track does not exist. Please search for a different track.");
     }
@@ -199,7 +199,7 @@ function App() {
         <form onSubmit={loadTopTracks}>
           <label>
             <span className="topTracks">
-            <span>Top Tracks</span>
+              <span>Top Tracks</span>
             </span>
             <select name="track" onChange={handleChange}>
               <option key="default" value="-1">
@@ -218,16 +218,24 @@ function App() {
           <hr />
           <form onSubmit={searchTrack}>
             <label>
-            <span className="topTracks">
-              <span>Track Name</span>
+              <span className="topTracks">
+                <span>Track Name</span>
               </span>
-              <input id="resetableField1" name="trackName" onChange={handleSearchChange} />
+              <input
+                id="resetableField1"
+                name="trackName"
+                onChange={handleSearchChange}
+              />
             </label>
             <label>
-            <span className="topTracks">
-              <span>Artist Name</span>
+              <span className="topTracks">
+                <span>Artist Name</span>
               </span>
-              <input id="resetableField2" name="artistName" onChange={handleSearchChange} />
+              <input
+                id="resetableField2"
+                name="artistName"
+                onChange={handleSearchChange}
+              />
             </label>
             <button>Search Track</button>
           </form>
@@ -239,13 +247,13 @@ function App() {
               <div className="lineItem">
                 <img src={x.image}></img>
                 <div className="songTitle">
-                {x.title} BY {x.artist} {" "}
+                  {x.title} BY {x.artist}{" "}
                 </div>
                 <a href={x.url} target="_blank">
                   Play Track {"▶️"}
                 </a>{" "}
                 <div className="playCount1">
-                 Play Count: <span>{x.playcount}</span>
+                  Play Count: <span>{x.playcount}</span>
                 </div>
                 <div className="delButton" onClick={() => handleDelete(x._id)}>
                   {"🚫"}
